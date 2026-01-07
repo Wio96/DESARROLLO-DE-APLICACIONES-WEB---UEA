@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Interactiva JS - Semana 5</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Galería Interactiva</h1>
+        <p>Ingresa una URL de imagen, agrégala, selecciónala con un clic y elimínala.</p>
+
+        <div class="controls">
+            <input type="url" id="imgUrl" placeholder="Pega aquí la URL de la imagen">
+            <button id="btnAgregar">Agregar Imagen</button>
+            <button id="btnEliminar" class="btn-delete">Eliminar Seleccionada</button>
+        </div>
+
+        <div id="galeria" class="gallery-grid">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
