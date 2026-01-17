@@ -1,0 +1,104 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd; /* Borde gris por defecto */
+    border-radius: 5px;
+    box-sizing: border-box; /* Para que el padding no rompa el ancho */
+    transition: border-color 0.3s;
+}
+
+/* Estilos dinámicos (Clases que pondrá JS) */
+input.correcto {
+    border-color: #28a745; /* Verde */
+    background-color: #e8f5e9;
+}
+
+input.incorrecto {
+    border-color: #dc3545; /* Rojo */
+    background-color: #f8d7da;
+}
+
+/* Mensajes de error */
+.error-msg {
+    color: #dc3545;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 5px;
+    height: 15px; /* Espacio reservado para que no brinque el diseño */
+}
+
+/* Botones */
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+#btnSubmit {
+    background-color: #007bff;
+    color: white;
+}
+
+#btnSubmit:disabled {
+    background-color: #ccc; /* Gris cuando está deshabilitado */
+    cursor: not-allowed;
+}
+
+#btnSubmit:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+#btnReset {
+    background-color: #6c757d;
+    color: white;
+}
+
+#btnReset:hover {
+    background-color: #545b62;
+}
