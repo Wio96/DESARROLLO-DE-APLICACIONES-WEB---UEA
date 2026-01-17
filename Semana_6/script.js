@@ -21,7 +21,7 @@ const expresiones = {
     email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     // Password: Mínimo 8 chars, al menos 1 numero y 1 caracter especial
     // Nota: (?=.*[0-9]) busca un numero, (?=.*[!@#...]) busca un símbolo
-    password: /^(?=.*[0-9])(?=.*[!@#$%^&*.])[a-zA-Z0-9!@#$%^&*.]{8,}$/
+    password: /^(?=.*[0-9])(?=.*[\W_])[a-zA-Z0-9\W_]{8,}$/
 };
 
 // 4. Función principal que valida cada campo según su "name" o "id"
