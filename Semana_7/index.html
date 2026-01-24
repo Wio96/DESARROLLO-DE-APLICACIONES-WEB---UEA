@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Dinámica de Productos - Semana 7</title>
+    <style>
+        /* Estilos básicos para presentar la lista */
+        body { font-family: 'Segoe UI', sans-serif; padding: 20px; background-color: #f4f4f9; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; }
+        
+        /* Estilo de la lista (<ul>) */
+        #lista-productos { list-style-type: none; padding: 0; }
+        
+        /* Estilo de cada tarjeta de producto (<li>) */
+        .producto-card {
+            border-bottom: 1px solid #eee;
+            padding: 15px;
+            transition: background 0.3s;
+        }
+        .producto-card:hover { background-color: #fafafa; }
+        .producto-nombre { font-size: 1.2em; font-weight: bold; color: #007bff; }
+        .producto-precio { color: #28a745; font-weight: bold; float: right; }
+        .producto-desc { color: #666; font-size: 0.9em; margin-top: 5px; }
+
+        /* Botón */
+        #btn-agregar {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        #btn-agregar:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Catálogo de Productos</h1>
+
+        <ul id="lista-productos"></ul>
+
+        <button id="btn-agregar">Agregar Nuevo Producto</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
