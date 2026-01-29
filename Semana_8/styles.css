@@ -1,0 +1,24 @@
+/* Personalización del Footer (Requisito: CSS propio) */
+footer {
+    background-color: #2c3e50 !important; /* Un azul oscuro diferente al de Bootstrap */
+    border-top: 5px solid #007bff; /* Una línea azul arriba */
+}
+
+/* Efecto extra para el botón de alerta */
+#btnAlerta {
+    transition: transform 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+#btnAlerta:hover {
+    transform: scale(1.1); /* Crece un poco al pasar el mouse */
+    background-color: #ffc107;
+}
+
+/* Estilo para mensajes de error */
+.error-msg {
+    font-size: 0.9em;
+    font-weight: bold;
+    display: none; /* Ocultos por defecto */
+}
