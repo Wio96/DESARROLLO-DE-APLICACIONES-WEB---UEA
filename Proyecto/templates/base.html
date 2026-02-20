@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Papangu Tours | Sistema de Reservas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <strong>Papangu Tours</strong> |
+            <a href="/">Inicio</a> |
+            <a href="/reservar">Nueva Reserva</a>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <hr>
+    <footer>
+        <p>&copy; 2024 Gestión de Reservas - Papangu Tours</p>
+    </footer>
+</body>
+</html>

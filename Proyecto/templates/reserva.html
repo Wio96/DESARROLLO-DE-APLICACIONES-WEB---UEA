@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Registrar Nueva Reserva</h1>
+    <form>
+        <label>Nombre del Cliente:</label><br>
+        <input type="text" placeholder="Ej. Walter"><br><br>
+        
+        <label>Destino:</label><br>
+        <select>
+            <option>Galápagos</option>
+            <option>Amazonía</option>
+            <option>Costa</option>
+        </select><br><br>
+        
+        <button type="button">Guardar Reserva</button>
+    </form>
+{% endblock %}
