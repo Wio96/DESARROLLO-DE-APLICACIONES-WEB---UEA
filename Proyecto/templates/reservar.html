@@ -1,17 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Registrar Nueva Reserva</h1>
-    <form>
-        <label>Nombre del Cliente:</label><br>
-        <input type="text" placeholder="Ej. Walter"><br><br>
+    <h1>Formulario de Reserva</h1>
+    <form class="reserva-form">
+        <h3>Datos del Cliente</h3>
+        <label>Nombre Completo:</label><br>
+        <input type="text" name="nombre" placeholder="Nombre del cliente" required><br>
         
-        <label>Destino:</label><br>
-        <select>
-            <option>Galápagos</option>
-            <option>Amazonía</option>
-            <option>Costa</option>
+        <label>Correo Electrónico:</label><br>
+        <input type="email" name="correo" placeholder="email@ejemplo.com" required><br>
+
+        <h3>Detalles del Paquete Turístico</h3>
+        <label>Seleccione el Destino:</label><br>
+        <select name="id_paquete">
+            <option value="1">Full Day Pastaza ($45.00)</option>
+            <option value="2">Sarayaku 5D - 4N ($450.00)</option>
+            <option value="3">Sarayaku 4D - 3N ($350.00)</option>
+            <option value="4">Sarayaku 3D - 2N ($250.00)</option>
+            <option value="5">Cueva de los Tayos (Desde 3D - 2N) ($300.00)</option>
+            <option value="6">Ruta Hola Vida - Indichuris (Desde 3D - 2N) ($180.00)</option>
         </select><br><br>
-        
-        <button type="button">Guardar Reserva</button>
+
+        <label>Fecha del Viaje:</label><br>
+        <input type="date" name="fecha_viaje" required><br>
+
+        <label>Cantidad de Pasajeros:</label><br>
+        <input type="number" name="pasajeros" min="1" value="1"><br><br>
+
+        <button type="submit" class="btn-enviar">Guardar Solicitud de Reserva</button>
     </form>
+    <p><small>* El estado de la reserva se guardará como <strong>"Pendiente"</strong>.</small></p>
 {% endblock %}
