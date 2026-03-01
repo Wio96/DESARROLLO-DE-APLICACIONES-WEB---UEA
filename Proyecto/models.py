@@ -13,7 +13,6 @@ class GestorDestinos:
         self._inicializar_db()
 
     def _get_connection(self):
-        # Esta conexión generará el archivo .db automáticamente
         conn = sqlite3.connect(self.db_path)
         conn.row_factory = sqlite3.Row
         return conn
@@ -26,19 +25,16 @@ class GestorDestinos:
                 descripcion TEXT,
                 precio_referencial REAL NOT NULL)''')
 
-    # CRUD: Leer (Uso de colecciones: Lista de Diccionarios)
     def listar_paquetes(self):
         with self._get_connection() as conn:
             rows = conn.execute('SELECT * FROM paquetes').fetchall()
             return [dict(r) for r in rows]
 
-    # CRUD: Crear
     def agregar_paquete(self, p):
         with self._get_connection() as conn:
             conn.execute('INSERT INTO paquetes VALUES (?,?,?,?)', 
                          (p.id, p.nombre, p.descripcion, p.precio))
 
-    # CRUD: Eliminar
     def eliminar_paquete(self, id_p):
         with self._get_connection() as conn:
             conn.execute('DELETE FROM paquetes WHERE id_paquete = ?', (id_p,))
