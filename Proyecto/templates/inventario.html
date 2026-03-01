@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Gestión de Inventario de Paquetes - Papangu Tours</h2>
+
+<div style="background: #e9ecef; padding: 15px; border-radius: 8px;">
+    <h3>Añadir Nuevo Paquete</h3>
+    <form action="/admin/nuevo" method="POST">
+        <input type="number" name="id" placeholder="ID (Ej: 1)" required style="width: 50px;">
+        <input type="text" name="nombre" placeholder="Nombre del Paquete" required>
+        <input type="text" name="descripcion" placeholder="Descripción breve">
+        <input type="number" step="0.01" name="precio" placeholder="Precio (Ej: 45.00)" required>
+        <button type="submit" style="background: #28a745; color: white; border: none; padding: 8px 15px; border-radius: 4px;">Guardar en DB</button>
+    </form>
+</div>
+
+<hr>
+
+<h3>Lista de Paquetes en Base de Datos</h3>
+<table border="1" style="width:100%; border-collapse: collapse; text-align: left;">
+    <thead style="background: #004a99; color: white;">
+        <tr>
+            <th>ID</th>
+            <th>Paquete</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in productos %}
+        <tr>
+            <td>{{ p.id_paquete }}</td>
+            <td><strong>{{ p.nombre_paquete }}</strong></td>
+            <td>${{ p.precio_referencial }}</td>
+            <td>
+                <a href="/admin/eliminar/{{ p.id_paquete }}" style="color: red; text-decoration: none;">[Eliminar]</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<p><small>Nota: Estos datos provienen de tu archivo <strong>papangu.db</strong> usando POO.</small></p>
+{% endblock %}
