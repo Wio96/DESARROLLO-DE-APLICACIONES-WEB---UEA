@@ -80,18 +80,24 @@ def reporte_pdf():
     pdf.cell(190, 10, "Reporte de Reservas - Papangu Tours", 0, 1, 'C')
     pdf.ln(10)
     
-    pdf.set_font("Arial", 'B', 12)
-    pdf.cell(30, 10, "Codigo", 1)
-    pdf.cell(80, 10, "Cliente", 1)
-    pdf.cell(50, 10, "Tour", 1)
-    pdf.cell(30, 10, "Pasajeros", 1, 1)
+    # Encabezados con tus columnas reales
+    pdf.set_font("Arial", 'B', 10)
+    pdf.cell(25, 10, "Codigo", 1)
+    pdf.cell(25, 10, "ID Cli", 1)
+    pdf.cell(25, 10, "ID Paq", 1)
+    pdf.cell(35, 10, "Fecha Viaje", 1)
+    pdf.cell(25, 10, "Pasaj.", 1)
+    pdf.cell(35, 10, "Estado", 1, 1)
     
-    pdf.set_font("Arial", '', 10)
+    pdf.set_font("Arial", '', 9)
     for r in lista:
-        pdf.cell(30, 10, str(r['codigo_reserva']), 1)
-        pdf.cell(80, 10, str(r['nombre_cliente']), 1)
-        pdf.cell(50, 10, str(r['paquete_turistico']), 1)
-        pdf.cell(30, 10, str(r['cantidad_pasajeros']), 1, 1)
+        # Aquí usamos los nombres EXACTOS de tu base de datos
+        pdf.cell(25, 10, str(r['codigo_reserva']), 1)
+        pdf.cell(25, 10, str(r['id_cliente']), 1)
+        pdf.cell(25, 10, str(r['id_paquete']), 1)
+        pdf.cell(35, 10, str(r['fecha_viaje']), 1)
+        pdf.cell(25, 10, str(r['cantidad_pasajeros']), 1)
+        pdf.cell(35, 10, str(r['estado']), 1, 1)
     
     response = make_response(pdf.output(dest='S').encode('latin-1'))
     response.headers['Content-Type'] = 'application/pdf'
