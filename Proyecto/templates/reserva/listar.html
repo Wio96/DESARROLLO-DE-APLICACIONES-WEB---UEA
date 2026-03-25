@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>Gestión de Reservas - Papangu Tours</h2>
+        <a href="{{ url_for('reporte_pdf') }}" class="btn btn-danger">Descargar Reporte PDF</a>
+    </div>
+    <hr>
+    <table class="table table-striped mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>Código</th>
+                <th>Cliente</th>
+                <th>Tour / Paquete</th>
+                <th>Fecha</th>
+                <th>Pasajeros</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in reserva %}
+            <tr>
+                <td>{{ r.codigo_reserva }}</td>
+                <td>{{ r.nombre_cliente }}</td>
+                <td>{{ r.paquete_turistico }}</td>
+                <td>{{ r.fecha_viaje }}</td>
+                <td>{{ r.cantidad_pasajeros }}</td>
+                <td>
+                    <a href="{{ url_for('editar_reserva', id_p=r.codigo_reserva) }}" class="btn btn-warning btn-sm">Editar</a>
+                    
+                    <a href="{{ url_for('eliminar', id_p=r.codigo_reserva) }}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
